@@ -1,5 +1,6 @@
-package edu.badpals.bicipalma.domain;
+package edu.badpals.bicipalma.domain.bicicleta;
 
+import edu.badpals.bicipalma.domain.bicicleta.Bicicleta;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -8,7 +9,6 @@ import static org.junit.Assert.assertEquals;
 public class TestBicicleta {
 
     Bicicleta bici = null;
-
 
     @Before
     public void setup() {

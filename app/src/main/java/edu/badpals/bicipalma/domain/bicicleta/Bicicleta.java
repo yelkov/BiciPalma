@@ -1,12 +1,8 @@
-package edu.badpals.bicipalma.domain;
-
-import org.junit.Test;
-
-import static org.junit.Assert.assertEquals;
+package edu.badpals.bicipalma.domain.bicicleta;
 
 public class Bicicleta {
 
-    private Integer id = 0;
+    private final Integer id;
 
     public Bicicleta (int id) {
         this.id = id;

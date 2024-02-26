@@ -8,4 +8,8 @@ public class Bicicleta {
         this.id = id;
     }
 
+    public int getId () {
+        return this.id ;
+    }
+
 }

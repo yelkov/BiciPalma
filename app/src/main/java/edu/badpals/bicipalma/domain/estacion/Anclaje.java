@@ -1,7 +1,7 @@
 
-
 package edu.badpals.bicipalma.domain.estacion;
 import edu.badpals.bicipalma.domain.bicicleta.Bicicleta;
+
 
 public class Anclaje {
 

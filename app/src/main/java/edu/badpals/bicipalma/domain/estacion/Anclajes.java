@@ -42,9 +42,5 @@ public class Anclajes {
     Bicicleta  getBiciAt(int posicionAnclaje) {
        return this.anclajes[posicionAnclaje].getBici();
     }
-
-    int seleccionarAnclaje() {
-
-    }
 }
 

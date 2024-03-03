@@ -44,4 +44,10 @@ public class TestEstacion {
         estacion.anclarBicicleta(new Bicicleta(999));
         assertEquals(0, estacion.anclajesLibres());
     }
+    @Test
+    public void leerTarjetaUsuarioTest() {
+        TarjetaUsuario tarjeta = new TarjetaUsuario("yop", true);
+        Estacion estacion = new Estacion(1, "Manacor", 1);
+        assertTrue(estacion.leerTarjetaUsuario(tarjeta));
+    }
 }

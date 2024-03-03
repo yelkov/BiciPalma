@@ -1,5 +1,7 @@
 package edu.badpals.bicipalma.domain.estacion;
 
+import edu.badpals.bicipalma.domain.bicicleta.Bicicleta;
+
 public class Estacion {
 
     private final Integer id;
@@ -44,4 +46,14 @@ public class Estacion {
             }
         }return numeroAnclajesLibres;
     }
+    public void anclarBicicleta(Bicicleta bici){
+        for (int i = 0; i < anclajes().length; i++ ){
+            if (anclajes()[i].isOcupado()){
+                continue;
+            }else{
+                anclajes.ocuparAnclaje(i,bici);
+                break;
+        }
+    }
+}
 }

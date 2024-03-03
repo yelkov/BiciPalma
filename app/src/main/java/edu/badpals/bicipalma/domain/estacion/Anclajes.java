@@ -8,6 +8,11 @@ public class Anclajes {
 
     Anclajes (int numeroAnclajes) {
         this.anclajes = new Anclaje[numeroAnclajes];
+        crearAnclajes(); //si no hacemos esto después de inicializar anclajes, cada uno de los anclajes tendrá valor null y no podremos comprobar si está ocupado.
+    }
+
+    Anclaje[] anclajes(){
+        return this.anclajes;
     }
 
     private void crearAnclajes() {

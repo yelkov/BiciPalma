@@ -16,7 +16,7 @@ public class Anclajes {
         }
     }
 
-    private Integer numAnclajes () {
+    Integer numAnclajes () {
         return this.anclajes.length;
     }
 
@@ -36,11 +36,12 @@ public class Anclajes {
     }
 
     void liberarAnclaje (int posicionAnclaje) {
-        this.anclajes[posicionAnclaje].liberarBici()
+        this.anclajes[posicionAnclaje].liberarBici();
     }
 
     Bicicleta  getBiciAt(int posicionAnclaje) {
        return this.anclajes[posicionAnclaje].getBici();
     }
+
 }
 

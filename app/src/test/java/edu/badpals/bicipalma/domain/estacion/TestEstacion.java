@@ -36,4 +36,12 @@ public class TestEstacion {
         estacion.anclarBicicleta(new Bicicleta(911));
         assertEquals(0, estacion.anclajesLibres());
     }
+    @Test
+    public void anclajesLibres_bici_anclada_Test() {
+
+        // cubrir las dos ramas de !a.isOcupado()
+        Estacion estacion = new Estacion(1, "Manacor", 1);
+        estacion.anclarBicicleta(new Bicicleta(999));
+        assertEquals(0, estacion.anclajesLibres());
+    }
 }

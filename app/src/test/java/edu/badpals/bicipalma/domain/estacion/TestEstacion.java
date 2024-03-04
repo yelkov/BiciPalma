@@ -1,9 +1,10 @@
 package edu.badpals.bicipalma.domain.estacion;
 
 import edu.badpals.bicipalma.domain.bicicleta.Bicicleta;
+import edu.badpals.bicipalma.domain.tarjetaUsuario.TarjetaUsuario;
 import org.junit.Test;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+
+import static org.junit.Assert.*;
 
 public class TestEstacion {
 

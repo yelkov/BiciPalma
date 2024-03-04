@@ -56,6 +56,7 @@ public class Estacion {
                 continue;
             } else {
                 anclajes.ocuparAnclaje(i, bici);
+                System.out.println("bicicleta: "+anclajes()[i].getBici()+" anclada en el anclaje: "+(i+1));
                 break;
             }
         }
@@ -67,10 +68,11 @@ public class Estacion {
 
     public void retirarBicicleta(Autenticacion tarjeta) {
         if (!this.leerTarjetaUsuario(tarjeta)) {
-            System.out.println("La tarjeta no está activada");
+            System.out.println("La tarjeta no esta activada");
         } else {
             for (int i = 0; i<anclajes().length;i++){
                 if (anclajes()[i].isOcupado()){
+                    System.out.println("bicicleta retirada: "+anclajes()[i].getBici()+" del anclaje: "+(i+1));
                     anclajes()[i].liberarBici();
                     break;
                 }else{
@@ -87,8 +89,13 @@ public class Estacion {
     public void consultarAnclajes() {
         int posicion = 1;
         for (Anclaje anclaje: anclajes()){
-            System.out.println("bicicleta: "+anclaje.getBici()+" anclada en el anclaje: "+posicion);
-            posicion++;
+            if (anclaje.isOcupado()){
+                System.out.println("Anclaje "+posicion+" "+anclaje.getBici());
+                posicion++;
+            }else{
+                System.out.println("Anclaje "+posicion+" libre");
+                posicion++;
+            }
         }
     }
 }

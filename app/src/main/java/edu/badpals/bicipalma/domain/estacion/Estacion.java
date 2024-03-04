@@ -11,7 +11,7 @@ public class Estacion {
     private final Anclajes anclajes;
 
 
-    Estacion(Integer id, String direccion, int numeroAnclajes) {
+    public Estacion(Integer id, String direccion, int numeroAnclajes) {
 
         this.id = id;
         this.direccion = direccion;
@@ -41,28 +41,55 @@ public class Estacion {
     public int anclajesLibres() {
         int numeroAnclajesLibres = 0;
         for (Anclaje anclaje : anclajes()) {
-            if (anclaje.isOcupado()){
+            if (anclaje.isOcupado()) {
                 continue;
-            }else{
+            } else {
                 numeroAnclajesLibres += 1;
             }
-        }return numeroAnclajesLibres;
+        }
+        return numeroAnclajesLibres;
     }
-    public void anclarBicicleta(Bicicleta bici){
-        for (int i = 0; i < anclajes().length; i++ ){
-            if (anclajes()[i].isOcupado()){
+
+    public void anclarBicicleta(Bicicleta bici) {
+        for (int i = 0; i < anclajes().length; i++) {
+            if (anclajes()[i].isOcupado()) {
                 continue;
-            }else{
-                anclajes.ocuparAnclaje(i,bici);
+            } else {
+                anclajes.ocuparAnclaje(i, bici);
                 break;
+            }
         }
     }
-}
-    public boolean leerTarjetaUsuario(Autenticacion tarjeta){
+
+    public boolean leerTarjetaUsuario(Autenticacion tarjeta) {
         return tarjeta.isActivada();
     }
 
     public void retirarBicicleta(Autenticacion tarjeta) {
+        if (!this.leerTarjetaUsuario(tarjeta)) {
+            System.out.println("La tarjeta no está activada");
+        } else {
+            for (int i = 0; i<anclajes().length;i++){
+                if (anclajes()[i].isOcupado()){
+                    anclajes()[i].liberarBici();
+                    break;
+                }else{
+                    continue;
+                }
+            }
+        }
+    }
 
+    public void consultarEstacion () {
+            System.out.println(this.toString());
+        }
+
+    public void consultarAnclajes() {
+        int posicion = 1;
+        for (Anclaje anclaje: anclajes()){
+            System.out.println("bicicleta: "+anclaje.getBici()+" anclada en el anclaje: "+posicion);
+            posicion++;
+        }
     }
 }
+

@@ -72,4 +72,4 @@ public class TestEstacion {
         assertEquals(6, estacion.anclajesLibres());
     }
 }
-}
+

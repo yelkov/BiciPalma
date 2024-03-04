@@ -2,6 +2,7 @@ package edu.badpals.bicipalma.domain.estacion;
 
 import edu.badpals.bicipalma.domain.bicicleta.Bicicleta;
 import edu.badpals.bicipalma.domain.tarjetaUsuario.Autenticacion;
+import edu.badpals.bicipalma.domain.tarjetaUsuario.TarjetaUsuario;
 
 public class Estacion {
 
@@ -59,5 +60,9 @@ public class Estacion {
 }
     public boolean leerTarjetaUsuario(Autenticacion tarjeta){
         return tarjeta.isActivada();
+    }
+
+    public void retirarBicicleta(Autenticacion tarjeta) {
+
     }
 }

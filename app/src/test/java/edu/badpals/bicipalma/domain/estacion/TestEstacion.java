@@ -51,4 +51,25 @@ public class TestEstacion {
         Estacion estacion = new Estacion(1, "Manacor", 1);
         assertTrue(estacion.leerTarjetaUsuario(tarjeta));
     }
+    @Test
+    public void retirarBicicletaTest() {
+
+        // tarjeta inactiva
+        Estacion estacion = new Estacion(1, "Manacor", 6);
+        TarjetaUsuario tarjeta = new TarjetaUsuario("yop", false);
+        estacion.retirarBicicleta(tarjeta);
+        assertEquals(6, estacion.anclajesLibres());
+
+        // tarjeta activa, no hay bicis
+        tarjeta = new TarjetaUsuario("yop", true);
+        estacion.retirarBicicleta(tarjeta);
+        assertEquals(6, estacion.anclajesLibres());
+
+        // tarjeta activa, hay bici
+        estacion.anclarBicicleta(new Bicicleta(911));
+        assertEquals(5, estacion.anclajesLibres());
+        estacion.retirarBicicleta(tarjeta);
+        assertEquals(6, estacion.anclajesLibres());
+    }
+}
 }
